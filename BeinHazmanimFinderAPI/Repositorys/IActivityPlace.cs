@@ -1,6 +1,6 @@
 ﻿using BeinHazmanimFinderAPI;
 
-namespace BeinHazmanimFinderAPI.Repositorys
+namespace BeinHazmanimFinderAPI
 {
     public interface IActivityPlace
     {
