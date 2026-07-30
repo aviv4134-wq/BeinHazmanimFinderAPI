@@ -1,53 +1,55 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BeinHazmanimFinderAPI.enums;
+using System.ComponentModel.DataAnnotations;
 
-namespace BeinHazmanimFinderAPI.Models
+namespace BeinHazmanimFinderAPI;
+
+public class Accommodation
 {
-    public class Accommodation
-    {
-        [Required]
-        public int Id { get; set; }
+    [Required]
+    public int Id { get; set; }
 
-        [Required]
-        [StringLength(70)]
+    [Required]
+    [StringLength(70)]
 
-        public string Name { get; set; } = string.Empty; //enum
+    public string Name { get; set; } = string.Empty; 
 
-        [Required]
-        [StringLength(30)]
-        public string AccommodationType { get; set; } = string.Empty;
+    [Required]
+    [EnumDataType(typeof(AccommodationTypes))]
+    [StringLength(30)]
+    public string AccommodationType { get; set; } = string.Empty;
 
-        [Required]
-        [StringLength(40)]
-        public string City { get; set; } = string.Empty;
+    [Required]
+    [StringLength(40)]
+    public string City { get; set; } = string.Empty;
 
-        [Required]
-        [StringLength(50)]
-        public string Area { get; set; } = string.Empty;
+    [Required]
+    [StringLength(50)]
+    public string Area { get; set; } = string.Empty;
 
-        [Required]
-        [StringLength(50)]
-        public string KashrutAuthority { get; set; } = string.Empty;
+    [Required]
+    [EnumDataType(typeof(KashrutAuthorities))]
+    [StringLength(50)]
+    public string KashrutAuthority { get; set; } = string.Empty;
 
-        [Required]
-        [Range(0,10000)]
-        public decimal PricePerNight { get; set; }
+    [Required]
+    [Range(0,10000)]
+    public decimal PricePerNight { get; set; }
 
-        [Required]
-        [Range(1,500)]
+    [Required]
+    [Range(1,500)]
 
-        public int MaximumGuests { get; set; }
+    public int MaximumGuests { get; set; }
 
-        [Required]
+    [Required]
 
-        public DateTime AvailableFrom { get; set; }
+    public DateTime AvailableFrom { get; set; }
 
-        [Required]
+    [Required]
 
-        public bool IsAccessible { get; set; } = false;
+    public bool IsAccessible { get; set; } = false;
 
-        [Required]
+    [Required]
 
-        public bool IsAbroad { get; set; } = false;
+    public bool IsAbroad { get; set; } = false;
 
-    }
 }
