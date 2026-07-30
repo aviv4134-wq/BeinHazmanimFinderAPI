@@ -1,6 +1,6 @@
 ﻿using System.Security.AccessControl;
 
-namespace BeinHazmanimFinderAPI.Repositorys;
+namespace BeinHazmanimFinderAPI;
 
     public interface IAccommodation
     {
@@ -10,7 +10,7 @@ namespace BeinHazmanimFinderAPI.Repositorys;
         public Task<Accommodation> CreateAsync(Accommodation accommodation);
         public Task< bool> UpdateAsync(int id, Accommodation accommodation);
         public Task<bool> DeleteAsync(int id);
-        //public Task<List<Accommodation>> GetByMaxPriceCityAccessibleAsync(string? city = null, int? maxPrice = null,bool? accessible = null);
+        //public Task<List<Accommodation>> GetByMaxPriceCityAccessibleAsync(string city , int? maxPrice = null,bool? accessible = null);
 
         //public Task<List<string>> GetTypesAsync();
 
